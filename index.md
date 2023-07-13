@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "进阶之路"
+  name: "创薪之路"
   text: "前端小菜鸡的进阶之路"
-  tagline: My great project tagline
+  tagline: Stay hungry，Stay foolish
   actions:
     - theme: brand
       text: Markdown Examples
@@ -14,7 +14,7 @@ hero:
       text: API Examples
       link: /api-examples
     - theme: 
-      text: my new link
+      text: github link
       link: https://github.com/LvJiaLei666
 
 features:
