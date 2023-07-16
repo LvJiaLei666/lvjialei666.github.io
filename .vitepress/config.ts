@@ -18,12 +18,6 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: "vitePress",
-        items: [
-          {text: "开始", link: '/docs/vitePress/start'}
-        ]
-      },
-      {
         text: "笔记",
         items: [
           {text: "前端私有npm仓库", link: "/docs/notes/搭建前端私有npm仓库"}
@@ -35,7 +29,14 @@ export default defineConfig({
           {text: 'Markdown Examples', link: '/markdown-examples'},
           {text: 'Runtime API Examples', link: '/api-examples'}
         ]
-      }
+      },
+      {
+        text: "写给自己",
+        link: "/docs/toMyself.md",
+        // items: [
+        //   {text: "开始", link: '/docs/vitePress/start'}
+        // ]
+      },
     ],
 
     socialLinks: [
