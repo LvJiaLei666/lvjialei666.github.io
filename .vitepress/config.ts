@@ -4,6 +4,7 @@ import {defineConfig} from 'vitepress'
 export default defineConfig({
   title: "吕嘉磊的个人博客",
   description: "前端小菜鸡的进阶之路",
+  base: "/",
   head: [
     ['link', {rel: 'icon', href: '/assets/favicon.ico'}]
   ],
