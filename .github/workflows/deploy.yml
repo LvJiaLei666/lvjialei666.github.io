@@ -1,0 +1,29 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm i pnpm -g
+      - run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm docs:build
+
+      - name: Commit and push changes
+          run: |
+            git config --global user.name "吕嘉磊"
+            git config --global user.email "1241597635@qq.com"
+            git add .
+            git commit -m "Deploy"
+            git push -f git@github.com:LvJiaLei666/lvjialei666.github.io.git master
+
