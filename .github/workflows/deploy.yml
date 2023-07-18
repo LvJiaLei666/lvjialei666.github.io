@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - master
+      - docs
 
 jobs:
   deploy:
@@ -13,17 +13,16 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm i pnpm -g
-      - run: pnpm install --frozen-lockfile
+      - run: npm i
 
       - name: Build
-        run: pnpm docs:build
+        run: npm run docs:build
 
-      - name: Commit and push changes
-          run: |
-            git config --global user.name "吕嘉磊"
-            git config --global user.email "1241597635@qq.com"
-            git add .
-            git commit -m "Deploy"
-            git push -f git@github.com:LvJiaLei666/lvjialei666.github.io.git master
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.DEPLOY_KEY }}
+          deploy_repository: git@github.com:LvJiaLei666/lvjialei666.github.io.git
+          publish_dir: ./.vitepress/dist
+
 
