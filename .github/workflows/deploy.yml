@@ -22,7 +22,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.DEPLOY_KEY }}
-          deploy_repository: git@github.com:LvJiaLei666/lvjialei666.github.io.git
+          publish_branch: master
           publish_dir: ./.vitepress/dist
 
 
