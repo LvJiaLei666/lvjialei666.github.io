@@ -1,1 +1,0 @@
-import{_ as e,o,c as t,O as a}from"./chunks/framework.bdcb0ee1.js";const m=JSON.parse('{"title":"写给自己","description":"","frontmatter":{},"headers":[],"relativePath":"docs/toMyself.md","filePath":"docs/toMyself.md"}'),s={name:"docs/toMyself.md"},c=a("",4),r=[c];function _(d,i,l,n,p,f){return o(),t("div",null,r)}const u=e(s,[["render",_]]);export{m as __pageData,u as default};
