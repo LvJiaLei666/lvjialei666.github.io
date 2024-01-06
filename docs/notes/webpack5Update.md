@@ -689,6 +689,9 @@ const devConfig = {
 **缓存的使用**
 
 在webpack5中，可以使用`cache`字段来配置缓存，以提高二次构建的速度。在`webpack.common.js`中配置：
+`注`：
+webpack5 内部对于 cache 的优化和利用已经非常好了，不需要再使用 webpack4 阶段用来优化缓存的 loader 和 plugin 来提升性能，只会引发未知的问题，建议全部去掉。
+
 
 ```js
 // ...
