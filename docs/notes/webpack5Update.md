@@ -36,7 +36,7 @@ npm init -y
   "main": "index.js",
   "scripts": {},
   "keywords": [],
-  "author": "ricky",
+  "author": "lvjialei",
   "license": "ISC"
 }
 ```
