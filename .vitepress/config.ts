@@ -44,7 +44,7 @@ export default defineConfig({
                 items: [
                     {text: "部署GitHub Pages", link: "/docs/notes/githubPages"},
                     {text: "前端私有npm仓库", link: "/docs/notes/verdaccio"},
-                    {text:"webpack5",link:"/docs/notes/webpack5Update"},
+                    {text:"webpack5从0开始搭建",link:"/docs/notes/webpack5Update"},
                 ]
 
             },
