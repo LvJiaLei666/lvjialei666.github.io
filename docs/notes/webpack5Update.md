@@ -88,6 +88,10 @@ package.json 中会出现：
 `assets`目录内新建`fonts`以及`img`目录，用于存放字体文件以及图片文件。
 
 ### 安装webpack-merge
+> webpack-merge 是一个用于合并 webpack 配置的工具。
+> 
+> 在 Webpack 中，通常会有不同的配置文件用于开发环境、生产环境等。webpack-merge 的作用是将这些不同环境下的配置合并成一个最终的配置。 
+> 这个工具的使用场景通常是这样的：你可能有一个通用的 webpack 配置，然后根据不同的环境（比如开发环境、生产环境）创建对应的配置文件。通过 webpack-merge，你可以将通用配置与特定环境的配置合并，而不必在每个环境的配置文件中重复一些相同的设置。
 
 ```shell
 npm install webpack-merge -D
@@ -189,6 +193,13 @@ module.exports = merge(commonConfig, prodConfig)
 ```
 
 ### 安装html-webpack-plugin 插件依赖：
+> `html-webpack-plugin` 是一个用于简化 HTML 文件生成的 Webpack 插件。它的主要作用是根据你的 Webpack 构建，自动生成一个 HTML 文件，并将生成的 JavaScript 文件自动插入到 HTML 文件中。
+> 该插件的一些主要功能和作用包括：
+> 1. **自动生成 HTML 文件：** html-webpack-plugin 可以根据你的配置自动生成一个 HTML 文件，这样你不再需要手动创建一个 HTML 文件。 
+> 2. **自动插入打包后的资源：** 该插件会自动将你打包后的 JavaScript、CSS 文件等资源插入到生成的 HTML 文件中。这包括文件名带有哈希值的 JavaScript 文件，确保缓存的有效使用。 
+> 3. **支持多页面应用：** 如果你的项目是多页面应用，html-webpack-plugin 支持配置多个入口文件，它会为每个入口文件生成相应的 HTML 文件。 
+> 4. **模板支持：** 你可以通过提供一个 HTML 模板，来定制生成的 HTML 文件的结构。这允许你添加自定义标签、样式、脚本或其他元素。 
+> 5. **优化 HTML 文件：** 插件还可以在生成 HTML 文件时进行一些优化，例如压缩 HTML、去除注释等。
 
 ```shell
 npm install html-webpack-plugin -D
@@ -215,6 +226,19 @@ module.exports = {
 ```
 
 ### 安装webpack-dev-server
+> `webpack-dev-server` 是一个为 Webpack 提供的开发服务器，它可以在开发过程中提供一个本地开发环境，支持实时重新加载（live reloading）和热模块替换（Hot Module Replacement，HMR）等功能。 
+> 以下是 `webpack-dev-server` 的一些主要特点和用法：
+> 1. **实时重新加载：** 当你修改源代码时，`webpack-dev-server` 会监测文件变化，并自动刷新浏览器，使你能够实时看到最新的修改效果。
+> 2. **热模块替换（HMR）：** `webpack-dev-server` 支持热模块替换，允许你在不刷新整个页面的情况下替换、添加或删除模块。
+> 3. **开发服务器：** 它提供了一个简单的开发服务器，支持配置选项，例如端口号、代理等。
+> 4. **内存中构建：** `webpack-dev-server` 将构建的文件保存在内存中，而不是写入磁盘，以提高构建速度。
+> 5. **支持 HTTPS：** 你可以通过配置使开发服务器运行在 HTTPS 模式，以模拟生产环境下的安全连接。
+> 6. **支持代理：** 可以配置代理，将请求转发到其他服务器，解决跨域问题。
+> 7. **自定义配置：** 你可以使用 `webpack-dev-server` 的 API 或者通过命令行参数来进行配置，以满足你的具体需求。
+
+使用 `webpack-dev-server` 通常是在开发阶段使用的，你可以在项目中通过以下方式安装和使用：
+
+
 
 ```shell
 npm install webpack-dev-server -D
@@ -323,10 +347,9 @@ npm install less less-loader css-loader style-loader postcss-loader -D
 ```
 
 css样式转换是在打包的时候转换的，所以安装的是开发依赖。在`webpack.dev.js`中配置：
-`注:` 
-1. webpack中loader的执行顺序是从右到左，从下到上
-2. `importLoaders: 1`表示在css-loader之前执行1个loader，也就是postcss-loader
-3. 
+>`注:`
+> 1. webpack中loader的执行顺序是从右到左，从下到上
+> 2. `importLoaders: 1`表示在css-loader之前执行1个loader，也就是postcss-loader
 
     
 ```javascript
