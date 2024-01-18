@@ -103,7 +103,7 @@ function LazyMan(name) {
 
 ```
 
-### 简易任务调度器编程题
+## 简易任务调度器编程题
 
 **目标：** 创建一个任务调度器类，可以在指定的未来时间执行任务。
 
@@ -221,7 +221,7 @@ scheduler.start();
 scheduler.cancel('goodbye');
 ```
 
-### **类型转换器**
+## **类型转换器**
 
 目标是创建一个类型，它将接收一个输入类型，并转换为一个新的输出类型，根据以下规则：
 
@@ -252,7 +252,7 @@ type Transform<T> = T extends string ? Uppercase<T> : T extends number ? T | `${
 ```
 
 
-### 题目：**排除属性**
+## 题目：**排除属性**
 
 目标是创建一个工具类型 ExcludeProps，它接受两个类型参数：一个对象类型 T 和一个联合类型 U。ExcludeProps 的结果类型应该是一个新的对象类型，它包含了原始类型 T 中那些键不在类型 U 中的所有属性。
 
@@ -278,3 +278,8 @@ type ResultType = ExcludeProps<ExampleType, 'age' | 'visible'>;
 
 要完成这个题目，您需要利用TypeScript中的映射类型（Mapped Types）和条件类型。
 
+实现
+
+```typescript
+type ExcludeProps<T, U> = { [P in keyof T as P extends U ? never : P]: T[P] }
+```
