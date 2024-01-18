@@ -98,4 +98,119 @@ function LazyMan(name) {
 
 ```
 
+### 简易任务调度器编程题
 
+**目标：** 创建一个任务调度器类，可以在指定的未来时间执行任务。
+
+**要求：**
+
+1. 实现一个名为 `TaskScheduler` 的类。
+2. 类应包含一个 `schedule(taskName, delay, callback)` 方法：
+    - `taskName` —— 任务的名称。
+    - `delay` —— 执行任务前的等待时间，单位为毫秒。
+    - `callback` —— 时间到达时执行的函数。
+3. 类应包含一个 `start()` 方法，调用后开始监视并在适当的时间执行所有已安排的任务。
+4. 添加一个 `cancel(taskName)` 方法来取消指定的已安排任务。
+5. 即使在 `start()` 方法已经被调用之后，新安排的任务也应该被正确监视和执行。
+
+**使用示例：**
+
+```javascript
+const scheduler = new TaskScheduler();
+
+scheduler.schedule('hello', 2000, () => {
+  console.log('Hello, World!');
+});
+
+scheduler.schedule('goodbye', 4000, () => {
+  console.log('Goodbye, World!');
+});
+
+scheduler.start();
+
+// 在某些条件下取消任务
+scheduler.cancel('goodbye');
+```
+
+在这个示例中，`hello` 任务应在 2 秒后执行，输出 `"Hello, World!"`，而 goodbye 任务应在 4 秒后执行，除非它在执行之前被取消。
+
+技术提示： 使用 JavaScript 的 setTimeout 和 clearTimeout 函数以及合适的数据结构来管理任务。
+
+> 实现思路 
+> 1. 使用一个对象来存储任务，key为任务名称，value为任务的延迟时间、回调函数以及是否已经调度的标志位
+> 2. 使用一个对象来存储计时器，key为任务名称，value为计时器的id
+> 3. 调度任务时，先判断任务是否已经调度，如果没有调度，则调用setTimeout，将任务放入队列中，等待执行
+> 4. 调度程序启动时，遍历任务列表，调度所有尚未调度的任务
+> 5. 取消任务时，清除计时器，将任务的调度标志位设置为false
+> 6. 如果需要重新安排任务，可以选择将任务留在列表中
+代码如下
+    
+[//]: # (/code/TaskScheduler.js)
+```js
+class TaskScheduler {
+  constructor() {
+    this.tasks = {};
+    this.timers = {};
+    this.isStarted = false;
+  }
+
+  schedule(taskName, delay, callback) {
+    if (!taskName || !delay || !callback) {
+      throw new Error('Invalid arguments');
+    }
+    // 存储回调函数及其延迟。
+    this.tasks[taskName] = { delay, callback, scheduled: false };
+
+    // 如果调度程序已启动，请立即调度任务。
+    if (this.isStarted) {
+      this.scheduleTask(taskName);
+    }
+  }
+
+  scheduleTask(taskName) {
+    const task = this.tasks[taskName];
+    if (task && !task.scheduled) {
+      task.scheduled = true;
+      // 调度任务并存储计时器ID。
+      this.timers[taskName] = setTimeout(() => {
+        task.callback();
+        // 任务执行完成后，重置任务状态。
+        task.scheduled = false;
+        this.timers[taskName] = null;
+      }, task.delay);
+    }
+  }
+
+  start() {
+    this.isStarted = true;
+    // 调度所有尚未调度的任务。
+    for (let taskName in this.tasks) {
+      this.scheduleTask(taskName);
+    }
+  }
+
+  cancel(taskName) {
+    if (this.timers[taskName]) {
+      clearTimeout(this.timers[taskName]);
+      // 如果您希望能够重新安排任务，也可以选择将任务留在列表中。
+      // this.tasks[taskName].scheduled = false;
+      this.timers[taskName] = null;
+    }
+  }
+}
+
+const scheduler = new TaskScheduler();
+
+scheduler.schedule('hello', 2000, () => {
+  console.log('Hello, World!');
+});
+
+scheduler.schedule('goodbye', 4000, () => {
+  console.log('Goodbye, World!');
+});
+
+scheduler.start();
+
+// 在某些条件下取消任务
+scheduler.cancel('goodbye');
+```
