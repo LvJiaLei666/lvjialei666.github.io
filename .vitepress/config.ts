@@ -46,6 +46,7 @@ export default defineConfig({
                     {text: "前端私有npm仓库", link: "/docs/notes/verdaccio"},
                     {text: "webpack5从0开始搭建", link: "/docs/notes/webpack5Update"},
                     {text: "练习", link: "/docs/notes/practice"},
+                    {text: "patch-package", link: "/docs/notes/patch-package"},
                 ]
 
             },
