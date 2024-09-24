@@ -13,4 +13,6 @@ permalink: /notes/
 - [GitHubPages部署](/docs/notes/githubPages)
 - [搭建前端私有npm仓库](/docs/notes/verdaccio)
 - [webpack5从0开始搭建](/docs/notes/webpack5Update.md)
+- [练习题](/docs/notes/practice.md)
+- [patch-package](/docs/notes/patch-package.md)
 

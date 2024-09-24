@@ -16,7 +16,7 @@ export default defineConfig({
         nav: [
             {text: '主页', link: '/'},
             {text: '笔记', link: '/docs/notes/index'},
-            {text: 'Examples', link: '/markdown-examples'}
+            // {text: 'Examples', link: '/markdown-examples'}
         ],
 
         sidebar: [
