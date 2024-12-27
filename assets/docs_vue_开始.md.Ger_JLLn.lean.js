@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./chunks/framework.B0cMFUTE.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"docs/vue/开始.md","filePath":"docs/vue/开始.md","lastUpdated":1735292421000}'),o={name:"docs/vue/开始.md"};function s(c,r,d,n,_,p){return a(),t("div")}const f=e(o,[["render",s]]);export{m as __pageData,f as default};
