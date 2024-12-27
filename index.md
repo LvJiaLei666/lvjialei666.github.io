@@ -6,6 +6,10 @@ hero:
   name: "创\"薪\"日记"
   text: "求知若饥，虚心若愚"
   tagline: Stay hungry，Stay foolish
+
+#  image:
+#    src: /logo.png
+#    alt: VitePress
   actions:
     - theme: brand
       text: Get Started

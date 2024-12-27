@@ -4,15 +4,15 @@ import {defineConfig} from 'vitepress'
 export default defineConfig({
   title: "吕嘉磊的个人博客",
   description: "前端小菜鸡的进阶之路",
-  base: "/",
+  base: "./",
   head: [
-    ['link', {rel: 'icon', href: '/assets/favicon.ico'}]
+    ['link', {rel: 'icon', href: '/assets/icon.svg'}]
   ],
   lastUpdated: true,
   cleanUrls: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: '/assets/avatar.png',
+    logo: '/assets/71485393.jpeg',
     nav: [
       {text: '主页', link: '/'},
       {text: '笔记', link: '/docs/notes/index'},
