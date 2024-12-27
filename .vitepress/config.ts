@@ -21,6 +21,12 @@ export default defineConfig({
 
         sidebar: [
             {
+                text: "面试题",
+                items: [
+                    {text: "事件循环/消息循环", link: "/docs/interviewQuestion/事件循环"}
+                ]
+            },
+            {
                 text: "Vue",
                 items: [
                     {text: "Vue-开始", link: "/docs/vue/开始"}
@@ -32,13 +38,6 @@ export default defineConfig({
                     {text: "React-开始", link: "/docs/react/开始"}
                 ]
             },
-            /*{
-              text: 'Examples',
-              items: [
-                {text: 'Markdown Examples', link: '/markdown-examples'},
-                {text: 'Runtime API Examples', link: '/api-examples'}
-              ]
-            },*/
             {
                 text: "笔记",
                 items: [
