@@ -48,7 +48,8 @@ export default defineConfig({
           text: 'Vue 深入浅出',
           collapsed: false,
           items: [
-            {text: "基础入门", link: "/docs/vue/开始"}
+            {text: "基础入门", link: "/docs/vue/开始"},
+            {text: "实现一个mini-vue2", link: "/docs/vue/实现一个mini-vue2"}
           ]
         }
       ],
