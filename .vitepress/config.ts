@@ -10,6 +10,8 @@ export default defineConfig({
   ],
   lastUpdated: true,
   cleanUrls: true,
+  // 忽略死链接
+  ignoreDeadLinks: true,
 
   // 排除不需要的源文件
   srcExclude: ['README.md', 'api-examples.md', 'markdown-examples.md'],
