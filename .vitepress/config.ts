@@ -10,10 +10,10 @@ export default defineConfig({
   ],
   lastUpdated: true,
   cleanUrls: true,
-  
+
   // 排除不需要的源文件
   srcExclude: ['README.md', 'api-examples.md', 'markdown-examples.md'],
-  
+
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: '/71485393.jpeg',
@@ -71,7 +71,8 @@ export default defineConfig({
             {text: "私有 NPM 仓库", link: "/docs/notes/verdaccio"},
             {text: "Webpack5 配置", link: "/docs/notes/webpack5Update"},
             {text: "实战练习", link: "/docs/notes/practice"},
-            {text: "Patch Package", link: "/docs/notes/patch-package"}
+            {text: "Patch Package", link: "/docs/notes/patch-package"},
+            {text: "micro-app", link: "/docs/notes/micro-app"},
           ]
         }
       ]

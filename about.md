@@ -24,7 +24,7 @@
 ## 📫 联系方式
 
 - GitHub: [LvJiaLei666](https://github.com/LvJiaLei666)
-- Email: [your.email@example.com](mailto:your.email@example.com)
+- Email: [lvjialei666@gmail.com](mailto:lvjialei666@gmail.com)
 
 ## 🌟 座右铭
 

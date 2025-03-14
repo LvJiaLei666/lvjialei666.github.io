@@ -15,4 +15,5 @@ permalink: /notes/
 - [webpack5从0开始搭建](/docs/notes/webpack5Update.md)
 - [练习题](/docs/notes/practice.md)
 - [patch-package](/docs/notes/patch-package.md)
+- [micro-app](/docs/notes/micro-app.md)
 
